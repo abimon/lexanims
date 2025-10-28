@@ -1,4 +1,4 @@
-<div>
+<div class="w-full h-full">
     <div class="mb-4 flex justify-end">
         <flux:modal.trigger name="add-organization">
             <flux:button>Add organization</flux:button>
@@ -39,7 +39,7 @@
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                    <table class="min-w-full text-center">
+                    <table class="w-full text-center">
                         <thead class="border-b bg-gray-800">
                             <th scope="col" class="text-sm font-medium text-white px-6 py-4">#</th>
                             <th scope="col" class="text-sm font-medium text-white px-6 py-4">Name</th>
