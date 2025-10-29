@@ -5,7 +5,7 @@
     @include('partials.head')
 </head>
 
-<body class="min-h-screen bg-white dark:bg-zinc-800">
+<body class="min-h-screen font-['Nanum_Gothic']">
     <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
         <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
@@ -17,9 +17,11 @@
             <flux:navlist.group class="grid mb-3">
                 <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
             </flux:navlist.group>
+            @if(auth()->user()->role=='Super-Admin')
             <flux:navlist.group class="grid mb-3">
                 <flux:navlist.item icon="squares-2x2" href="/organizations" :current="request()->routeIs('organizations')" wire:navigate>{{ __('Organizations') }}</flux:navlist.item>
             </flux:navlist.group>
+            @endif
             <flux:navlist.group class="grid mb-3">
                 <flux:navlist.item icon="users" href="/users" :current="request()->routeIs('users')" wire:navigate>{{ __('Clients') }}</flux:navlist.item>
             </flux:navlist.group>

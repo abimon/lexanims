@@ -15,12 +15,14 @@
 
                     <flux:input class="mb-3" wire:model="name" label="Full Name" placeholder="E.g Maicohs Limited" />
 
-                    <flux:input class="mb-3" wire:model="email" label="Authorized Email" placeholder="E.g example@domain.com" />
+                    <flux:input class="mb-3" wire:model="authorized_email" label="Authorized Email" placeholder="E.g example@domain.com" />
+
+                    <flux:input class="mb-3" wire:model="email" label="Email" placeholder="E.g example@domain.com" />
 
                     <flux:input class="mb-3" wire:model="phone" label="Phone Number" placeholder="E.g +1234567890" />
 
                     @if (Auth::user()->role=='Super-Admin')
-                    <flux:select class="mb-3" wire:model="status" label="Organization" placeholder="Choose status...">
+                    <flux:select class="mb-3" wire:model="status" label="Status" placeholder="Choose status...">
                         @foreach ($this->states as $state)
                         <flux:select.option value="{{ $state }}">{{$state}}</flux:select.option>
                         @endforeach
@@ -49,7 +51,7 @@
                         </thead>
                         <tbody>
                             @foreach ($this->organizations as $organization)
-                            <tr style="white-space: nowrap;" class="mb-3">
+                            <tr style="white-space: nowrap;text-align:left;" class="mb-3">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium ">{{ $loop->iteration}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium ">{{ $organization->name }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium ">{{ $organization->authorized_email}}</td>
